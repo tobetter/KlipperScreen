@@ -5,7 +5,7 @@ import logging
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk, GdkPixbuf, GLib, Pango
 import os
-klipperscreendir = os.getcwd()
+klipperscreendir = os.environ['PYTHONPATH'] if os.environ['PYTHONPATH'] is not None else os.getcwd()
 
 class KlippyGtk:
     labels = {}

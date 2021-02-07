@@ -48,7 +48,8 @@ PRINTER_BASE_STATUS_OBJECTS = [
     'webhooks'
 ]
 
-klipperscreendir = os.getcwd()
+klipperscreendir = os.environ['PYTHONPATH'] if os.environ['PYTHONPATH'] is not None else os.getcwd()
+config = klipperscreendir + "/KlipperScreen.config"
 
 class KlipperScreen(Gtk.Window):
     """ Class for creating a screen for Klipper via HDMI """
