@@ -1,0 +1,17 @@
+[Unit]
+Description=KlipperScreen
+After=moonraker.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+Environment="PYTHONPATH=/usr/lib/python3.8/dist-packages/klipperscreen"
+ExecStart=/usr/bin/xinit \
+	/usr/bin/python3 ${PYTHONPATH}/screen.py \
+	--configfile ${PYTHONPATH}/ks_includes/KlipperScreen.conf
+
+[Install]
+WantedBy=multi-user.target
+

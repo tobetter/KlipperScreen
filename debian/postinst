@@ -1,0 +1,11 @@
+#!/bin/sh
+
+/usr/bin/pip3 install -r /usr/share/klipperscreen/KlipperScreen-requirements.txt
+
+touch /etc/X11/Xwrapper.config
+sed -i "/allowed_users=.*/d" /etc/X11/Xwrapper.config
+echo "allowed_users=anybody" >> /etc/X11/Xwrapper.config
+
+systemctl disable gdm3
+
+#DEBHELPER#
