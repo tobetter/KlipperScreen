@@ -1,0 +1,2 @@
+scripts/KlipperScreen-requirements.txt	/usr/share/klipperscreen/
+styles/*				/usr/lib/python3.8/dist-packages/klipperscreen/styles/
