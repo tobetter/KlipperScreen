@@ -1,2 +1,3 @@
 scripts/KlipperScreen-requirements.txt	/usr/share/klipperscreen/
 styles/*				/usr/lib/python3.8/dist-packages/klipperscreen/styles/
+etc/X11/xorg.conf.d/10-monitors.conf
