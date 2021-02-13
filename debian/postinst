@@ -6,6 +6,10 @@ touch /etc/X11/Xwrapper.config
 sed -i "/allowed_users=.*/d" /etc/X11/Xwrapper.config
 echo "allowed_users=anybody" >> /etc/X11/Xwrapper.config
 
+if [ -f /etc/default/moonraker.conf ]; then
+	sed -i "s/enabled:.*/enabled: False/" /etc/default/moonraker.conf
+fi
+
 systemctl disable gdm3
 
 #DEBHELPER#
